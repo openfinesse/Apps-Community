@@ -10,10 +10,10 @@
     # FACTS #######################################################################
     - name: 'Set Known Facts'
       set_fact:
-        pgrole: 'cachethq'
-        intport: '8000'
-        extport: '6993'
-        image: 'cachethq/docker:latest'
+        pgrole: 'wger'
+        intport: '80'
+        extport: '6884'
+        image: 'wger/apache:latest'
 
     # CORE (MANDATORY) ############################################################
     - name: 'Including cron job'
@@ -41,7 +41,7 @@
       set_fact:
         pg_volumes:
           - '/etc/localtime:/etc/localtime:ro'
-          - '/opt/appdata/{{pgrole}}:/var/www/html/'
+          - '{{path.stdout}}:{{path.stdout}}'
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
