@@ -11,7 +11,7 @@
     # FACTS #######################################################################
     - name: 'Set Known Facts'
       set_fact:
-        pgrole: 'lidarr-amd'
+        pgrole: 'docker-amd'
         intport: '8686'
         extport: '8686'
         image: 'randomninjaatk/amd'
