@@ -46,11 +46,19 @@
           - '/opt/appdata/{{pgrole}}/data:/data'
           - '/opt/appdata/{{pgrole}}/config:/config'
           - '/opt/appdata/{{pgrole}}/metadata:/metadata'
+          - '/opt/appdata/{{pgrole}}/cache:/cache'
+          - '/opt/appdata/{{pgrole}}/generated:/generated'
           - '{{path.stdout}}:{{path.stdout}}'
                     
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
         pg_env:
+          PUID: '1000'
+          PGID: '1000'
+          STASH_STASH: /data
+          STASH_GENERATED: /generated
+          STASH_METADATA: /metadata
+          STASH_CACHE: /cache
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
