@@ -47,7 +47,7 @@
           - '/opt/appdata/{{pgrole}}:/config'
           - '/opt/appdata/{{pgrole}}:/downloads'
           - '{{path.stdout}}:{{path.stdout}}'
-	          
+          
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
         pg_env:
