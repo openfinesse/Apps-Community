@@ -12,7 +12,7 @@
     # FACTS #######################################################################
     - name: 'Set Known Facts'
       set_fact:
-        pgrole: 'audiobook-scraper'
+        pgrole: 'abscraper'
         intport: '3000'
         extport: '3456'
         image: 'csandman/audiobook-scraper:latest'
@@ -43,14 +43,16 @@
       set_fact:
         pg_volumes:
           - '/etc/localtime:/etc/localtime:ro'
-          - '/mnt/samba/Books/ab-scraper/final:/final'
+          - '/opt/appdata/{{pgrole}}/final:/final'
           - '/opt/appdata/{{pgrole}}/config:/config'
-          - '/mnt/samba/Books/ab-scraper/source:/source'
+          - '/opt/appdata/{{pgrole}}/source:/source'
           - '{{path.stdout}}:{{path.stdout}}'
           
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
         pg_env:
+          PUID: '1000'
+          PGID: '1000'
 
     # MAIN DEPLOYMENT #############################################################
     - name: 'Deploying {{pgrole}}'
