@@ -43,9 +43,8 @@
       set_fact:
         pg_volumes:
           - '/etc/localtime:/etc/localtime:ro'
-          - '/opt/appdata/{{pgrole}}/metadata:/opt/appdata/audiobookshelf/config/metadata'
-          - '/opt/appdata/{{pgrole}}/config:/opt/appdata/audiobookshelf/config'
-          - '/opt/appdata/{{pgrole}}/audiobooks:/mnt/unionfs/ab2'
+          - '/opt/appdata/{{pgrole}}/metadata:/metadata'
+          - '/opt/appdata/{{pgrole}}/config:/config'
           - '{{path.stdout}}:{{path.stdout}}'
           
     - name: 'Setting {{pgrole}} ENV'
