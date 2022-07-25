@@ -10,7 +10,7 @@
       set_fact:
         pgrole: 'komga'
         intport: '8080'
-        extport: '8090'
+        extport: '8092'
         image: 'gotson/komga'
 
     # CORE (MANDATORY) ############################################################
@@ -38,7 +38,7 @@
     - name: 'Setting {{pgrole}} Volumes'
       set_fact:
         pg_volumes:
-          - '/opt/appdata/{{pgrole}}config:/name of folder'
+          - '/opt/appdata/{{pgrole}}config:/config'
           - '{{path.stdout}}/unionfs/books:/books'
           - '/etc/localtime:/etc/localtime:ro'
 
