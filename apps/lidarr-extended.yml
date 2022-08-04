@@ -53,7 +53,7 @@
           PGID: '1000'
           TZ: 'America/Chicago'
           autoStart: 'true
-          SCRIPTINTERVAL: 15m
+          SCRIPTINTERVAL: '15m'
           enableAudioScript: 'true'
           enableVideoScript: 'false'
           configureLidarrWithOptimalSettings: 'true'
