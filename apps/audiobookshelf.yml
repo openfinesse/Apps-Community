@@ -46,6 +46,7 @@
           - '/opt/appdata/{{pgrole}}/metadata:/metadata'
           - '/opt/appdata/{{pgrole}}/config:/config'
           - '{{path.stdout}}:{{path.stdout}}'
+          - '/mnt/unionfs/ab2:/audiobooks'
           
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
