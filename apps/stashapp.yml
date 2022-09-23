@@ -44,7 +44,7 @@
         pg_volumes:
           - '/etc/localtime:/etc/localtime:ro'
           - '/opt/appdata/{{pgrole}}/data:/data'
-          - '/opt/appdata/{{pgrole}}/config:/config'
+          - '/opt/appdata/{{pgrole}}/config:/root/.stash'
           - '/opt/appdata/{{pgrole}}/metadata:/metadata'
           - '/opt/appdata/{{pgrole}}/cache:/cache'
           - '/opt/appdata/{{pgrole}}/generated:/generated'
